@@ -27,16 +27,46 @@ export default function Login() {
     }
   };
 
+  function animateLabel(labelElement: HTMLElement, text: string) {
+    labelElement.innerHTML = text
+      .split("")
+      .map(
+        (letter, idx) =>
+          `<span style="transition-delay:${idx * 50}ms">${letter}</span>`
+      )
+      .join("");
+  }
+
   return (
     <Layout>
       <form onSubmit={handleSubmit}>
-        <input name="email" placeholder="Email" onChange={handleChange} />
-        <input
-          name="password"
-          placeholder="Password"
-          type="password"
-          onChange={handleChange}
-        />
+        <div className="form-wave">
+          <input
+            name="email"
+            required
+            value={form.email}
+            onChange={handleChange}
+          />
+          <label
+            ref={(el) => {
+              if (el) animateLabel(el, "Email");
+            }}
+          />
+        </div>
+        <div className="form-wave">
+          <input
+            name="password"
+            type="password"
+            required
+            value={form.password}
+            onChange={handleChange}
+          />
+          <label
+            ref={(el) => {
+              if (el) animateLabel(el, "Password");
+            }}
+          />
+        </div>
         <button type="submit">Login</button>
         {error && <p style={{ color: "red" }}>{error}</p>}
       </form>

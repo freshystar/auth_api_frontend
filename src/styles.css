@@ -1,17 +1,17 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f8;
-    color: #333;
+    background-color: steelblue;
+    color: white;
   }
   
   .navbar {
-    background-color: #1976d2;
+    background-color: wheat;
     padding: 1rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
+    color: rgb(85, 81, 81);
   }
   
   .navbar h1 {
@@ -22,7 +22,7 @@ body {
   
   .navbar .nav-buttons button {
     background: none;
-    color: white;
+    color: rgb(68, 67, 67);
     border: none;
     margin-left: 1rem;
     cursor: pointer;
@@ -30,7 +30,7 @@ body {
   }
   
   .container {
-    max-width: 600px;
+    max-width: 400px;background-color: steelblue;
     margin: 3rem auto;
     padding: 2rem;
     background-color: white;
@@ -61,4 +61,46 @@ body {
   h2 {
     text-align: center;
   }
+
+  .form-wave {
+    position: relative;
+    margin: 20px 0 30px;
+  }
+  
+  .form-wave input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid #1976d2;
+    width: 100%;
+    display: block;
+    padding: 15px 0;
+    font-size: 16px;
+    color: #1976d2;
+  }
+  
+  .form-wave input:focus,
+  .form-wave input:valid {
+    outline: 0;
+    border-bottom-color: #1976d2;
+  }
+  
+  .form-wave label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    pointer-events: none;
+    color: #1976d2;
+  }
+  
+  .form-wave label span {
+    display: inline-block;
+    transition: transform 0.3s ease-in;
+    min-width: 1px;
+  }
+  
+  .form-wave input:focus + label span,
+  .form-wave input:valid + label span {
+    transform: translateY(-30px);
+  }
+  
   

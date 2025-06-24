@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { AuthApi, Configuration, type LoginRequest } from "../ts-client";
 import Layout from "../components/Layout";
+import { useToast } from "../components/ToastProvider";
 
 export default function Login() {
   const [form, setForm] = useState<LoginRequest>({ email: "", password: "" });
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const toast = useToast();
   const config = new Configuration({ basePath: "http://localhost:3000" });
 
   const api = new AuthApi(config);
@@ -19,8 +21,8 @@ export default function Login() {
     e.preventDefault();
     try {
       const res = await api.login(form);
-      localStorage.setItem("token", res.data.token); // Save token
-      alert("Login successful!");
+      localStorage.setItem("token", res.data.token);
+      toast("Login successful!");
       navigate("/profile");
     } catch (err: any) {
       setError(err?.response?.data?.error || "Login failed.");
@@ -70,6 +72,9 @@ export default function Login() {
         <button type="submit">Login</button>
         {error && <p style={{ color: "red" }}>{error}</p>}
       </form>
+      <p>
+        Don't have an account? <Link to="/register">Register</Link>
+      </p>
     </Layout>
   );
 }

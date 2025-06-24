@@ -6,12 +6,27 @@ export default function Home() {
 
   return (
     <Layout>
-      <div style={{ padding: 40 }}>
-        <h1>Welcome to Our Authentication Authorization System</h1>
-        <button onClick={() => navigate("/register")}>Register</button>
-        <button onClick={() => navigate("/login")}>Login</button>
-        <button onClick={() => navigate("/profile")}>Profile</button>
-        <footer>By TAAF</footer>
+      <div className="container">
+        <h2>🎉 Welcome to Our Auth System! 🎉</h2>
+        <p style={{ textAlign: "center", marginBottom: "2rem" }}>
+          Securely register, log in, and manage your profile with ease. 🔐✨
+        </p>
+
+        <button onClick={() => navigate("/register")}>
+          📝 Register
+        </button>
+
+        <button onClick={() => navigate("/login")}>
+          🔐 Login
+        </button>
+
+        <button onClick={() => navigate("/profile")}>
+          👤 View Profile
+        </button>
+
+        <footer style={{ textAlign: "center", marginTop: "2rem", fontStyle: "italic" }}>
+          🚀 Built with ❤️ by <strong>TAAF</strong>
+        </footer>
       </div>
     </Layout>
   );

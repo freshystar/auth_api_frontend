@@ -22,7 +22,7 @@ export default function Login() {
     try {
       const res = await api.login(form);
       localStorage.setItem("token", res.data.token);
-      toast("Login successful!");
+      toast("Login successful! 👍🏼");
       navigate("/profile");
     } catch (err: any) {
       setError(err?.response?.data?.error || "Login failed.");
@@ -74,6 +74,9 @@ export default function Login() {
       </form>
       <p>
         Don't have an account? <Link to="/register">Register</Link>
+      </p>
+      <p>
+       Back to <Link to="/home"> home 🏠</Link>
       </p>
     </Layout>
   );

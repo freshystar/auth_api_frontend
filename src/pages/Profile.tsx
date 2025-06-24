@@ -32,7 +32,7 @@ export default function Profile() {
     const lastName = localStorage.getItem("lastName");
 
     if (!token) {
-      toast("Please log in to view your profile.");
+      toast("📌 Please log in to view your profile.");
       navigate("/login");
       return;
     }
@@ -41,7 +41,7 @@ export default function Profile() {
       const decoded: DecodedToken = jwtDecode(token);
 
       if (decoded.exp * 1000 < Date.now()) {
-        toast("Session expired. Please log in again.");
+        toast("⛔️ Session expired. Please log in again.");
         localStorage.clear();
         navigate("/login");
         return;

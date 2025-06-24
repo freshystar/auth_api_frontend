@@ -22,7 +22,7 @@ body::before {
     max-width: 400px;
     margin: 3rem auto;
     padding: 2rem;
-    background-color: rgba(245, 222, 179, 0.95); /* wheat with slight transparency */
+    background-color: rgb(250, 220, 164); /* wheat with slight transparency */
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   }
@@ -107,6 +107,39 @@ body::before {
     z-index: 9999;
     opacity: 0.95;
   }
-  
+  .home-container {
+  max-width: 350px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background-color: rgb(250, 220, 164); /* semi-transparent white */
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.8s ease-in;
+  transition: transform 0.3s ease;
+}
+
+.home-container:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 24px rgba(4, 56, 109, 0.2);
+}
+
+/* Keep the fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Improve button spacing */
+.home-container button {
+  margin-top: 0.75rem;
+}
+
   
   

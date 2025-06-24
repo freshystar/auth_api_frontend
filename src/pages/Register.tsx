@@ -27,7 +27,7 @@ export default function Register() {
     e.preventDefault();
     try {
       await api.register(form);
-      toast("Registration complete!");
+      toast("Registration complete! 🎉");
       localStorage.setItem("firstName", form.firstName);
       localStorage.setItem("lastName", form.lastName);
       localStorage.setItem("email", form.email);
@@ -109,6 +109,9 @@ export default function Register() {
       </form>
       <p>
         Already have an account? <Link to="/login">Login</Link>
+      </p>
+      <p>
+       Back to <Link to="/home"> home 🏠</Link>
       </p>
     </Layout>
   );
